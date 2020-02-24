@@ -1,9 +1,20 @@
-FROM node:alpine
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
-WORKDIR /home/node/app
-COPY package*.json ./
-USER node
+# specify a base image
+FROM node:12.16.1-alpine
+
+# Set the working direco¡tory
+WORKDIR /usr/app
+
+# install some dependecies
+COPY ./package.json ./
+RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python
+RUN npm install --quiet node-gyp -g
 RUN npm install
-COPY --chown=node:node . .
+
+# copy projects files
+COPY ./ ./
+
+# expose port
 EXPOSE 1883
+
+# default command
 CMD ["npm", "start"]
