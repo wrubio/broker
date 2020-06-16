@@ -10,8 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/bigquery": "^4.7.0",
+    "cron": "^1.8.2",
     "mosca": "^2.8.3",
     "mqtt": "^3.0.0",
-    "serialport": "^8.0.7"
+    "serialport": "^8.0.7",
+    "weather-js": "^2.0.0"
   }
 }

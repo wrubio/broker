@@ -89,3 +89,6 @@ typings/
 
 # Mac os DS_Store
 .DS_Store
+
+# ES9
+.jshintrc
