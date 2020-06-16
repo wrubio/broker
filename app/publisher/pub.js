@@ -36,7 +36,6 @@ async function query() {
   const [rows] = await job.getQueryResults();
 
   // Print the results
-  console.log('Rows:');
   medellin = rows.filter(row => row.city === 'Medellin' && row.pollutant === 'pm25');
   medellin = medellin.map((zone, i) => {
     zone['id'] = i + 1;
@@ -44,7 +43,6 @@ async function query() {
 
     return zone;
   });
-  console.log(medellin);
 }
 
 query();
