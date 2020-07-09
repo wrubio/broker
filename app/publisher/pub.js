@@ -58,13 +58,10 @@ function publicTemperatureValues() {
 const getCityWeatheJob = new cronJob('*/30 * * * * *', () => {
   query();
   publicTemperatureValues();
-});
-const genPayloadJob = new cronJob('*/40 * * * * *', () => {
   genPayload();
-});
-const genVideoJob = new cronJob('*/50 * * * * *', () => {
   genVideo();
 });
+
 // ================================================================
 // Cron job that obtains the temperature of the selected city every 2 min
 function genPayload() {
@@ -76,7 +73,7 @@ function genPayload() {
     format: 'jpeg',
     data: base64data
   };
-  
+
   client.publish(topicB, JSON.stringify(message));
 }
 
@@ -98,5 +95,3 @@ genPayload();
 genVideo();
 query();
 getCityWeatheJob.start();
-genPayloadJob.start();
-genVideoJob.start();
