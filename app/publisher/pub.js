@@ -89,6 +89,6 @@ function genVideo() {
 // ================================================================
 // starts jobs temperatures
 genPayload();
-genVideo();
-// query();
+// genVideo();
+query();
 getCityWeatheJob.start();
