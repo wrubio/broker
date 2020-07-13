@@ -92,3 +92,7 @@ typings/
 
 # ES9
 .jshintrc
+
+#package-loc
+package-lock.json
+yarn.lock

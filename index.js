@@ -26,5 +26,5 @@ brokerServer.on('published', (packet) => {
 });
 
 brokerServer.on('clientConnected', function(client) {
-  console.log('client connected', client.id);
+  // console.log('client connected', client.id);
 });
