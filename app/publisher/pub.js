@@ -53,6 +53,7 @@ function publicTemperatureValues() {
 // ================================================================
 // Cron job that obtains the temperature of the selected city every 2 min
 const getCityWeatheJob = new cronJob('*/30 * * * * *', () => {
+  // query();
   publicTemperatureValues();
   genPayload();
   genVideo();
@@ -89,5 +90,5 @@ function genVideo() {
 // starts jobs temperatures
 genPayload();
 genVideo();
-query();
+// query();
 getCityWeatheJob.start();
