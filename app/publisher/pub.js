@@ -28,7 +28,6 @@ async function query() {
 
   // Run the query as a job
   const [job] = await bigquery.createQueryJob(options);
-  console.log(`Job ${job.id} started.`);
 
   // Wait for the query to finish
   const [rows] = await job.getQueryResults();
@@ -42,8 +41,6 @@ async function query() {
     return zone;
   });
 }
-
-query();
 
 // ================================================================
 // Publishes the values of each device
