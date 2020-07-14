@@ -9,11 +9,6 @@ const brokerServer = new mosca.Server({
 });
 
 // ================================================================
-// Start Publisher 
-require('./app/publisher/pub');
-
-
-// ================================================================
 // Get broker connection status
 brokerServer.on('ready', () => {
   console.log('Broker server is ready and is running on port: ', port);
@@ -22,7 +17,7 @@ brokerServer.on('ready', () => {
 // ================================================================
 // Get publisher message
 brokerServer.on('published', (packet) => {
-  // console.log(packet.payload.toString());
+  // console.log(packet.topic);
 });
 
 brokerServer.on('clientConnected', function(client) {
