@@ -17,7 +17,7 @@ brokerServer.on('ready', () => {
 // ================================================================
 // Get publisher message
 brokerServer.on('published', (packet) => {
-  // console.log(packet.topic);
+  console.log(packet.topic);
 });
 
 brokerServer.on('clientConnected', function(client) {
